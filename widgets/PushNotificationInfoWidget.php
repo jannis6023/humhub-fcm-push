@@ -6,7 +6,7 @@ class PushNotificationInfoWidget extends \humhub\components\Widget
 {
     public function run()
     {
-        //return $this->render('push-notification-info');
+        return $this->render('push-notification-info');
     }
 
 }

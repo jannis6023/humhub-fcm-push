@@ -18,6 +18,13 @@ humhub.module('firebase', function (module, require, $) {
     const afterServiceWorkerRegistration = function (registration) {
         const that = this;
 
+        // use cached registration for the case of manual invocation
+        if(registration){
+            humhub.fbSwRegistration = registration
+        }else{
+            registration = humhub.fbSwRegistration
+        }
+
         this.messaging.swRegistration = registration;
 
         // Request for permission
